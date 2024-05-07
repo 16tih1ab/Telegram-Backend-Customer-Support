@@ -1,0 +1,19 @@
+Telegram-Backend-Customer-Support/
+│
+├── backend/
+│   ├── api.py                  # Backend API code
+│   ├── database.py             # Database interactions
+│   └── config.py               # Configuration file for backend
+│
+├── bot/
+│   ├── bot.py                  # Telegram bot code
+│   ├── handlers.py             # Bot message handlers
+│   └── config.py               # Configuration file for bot
+│
+├── docs/
+│   └── README.md               # Documentation for the project
+│
+├── LICENSE                     # License file (e.g., MIT License)
+│
+└── README.md                   # Project README file
+
