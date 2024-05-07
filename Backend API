@@ -1,0 +1,17 @@
+from flask import Flask, request, jsonify
+from database import Database  # Import your database interaction code
+import config
+
+app = Flask(__name__)
+db = Database(config.DB_HOST, config.DB_USER, config.DB_PASSWORD, config.DB_NAME)
+
+@app.route('/api/support', methods=['POST'])
+def support():
+    data = request.json
+    # Process the incoming request, e.g., create a support ticket in the database
+    ticket_id = db.create_ticket(data['user_id'], data['message'])
+    response = {'ticket_id': ticket_id, 'message': 'Ticket created successfully'}
+    return jsonify(response)
+
+if __name__ == '__main__':
+    app.run(debug=True)
